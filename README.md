@@ -1,5 +1,8 @@
 # AC1_3-Study
 
+Check the documentation to get a quick intro to LabJS, try to play around a little with the examples
+https://labjs.readthedocs.io/en/latest/learn/builder/
+
 To keep on working,
 
 1. Open the editor, https://labjs.felixhenninger.com/
