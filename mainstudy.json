@@ -313,6 +313,48 @@
       "_tab": "Scripts",
       "content": "<main class=\"content-horizontal-center content-vertical-center\">\r\n  <!-- Table styles are specified in the overall study CSS,\r\n       please see study options. This screen also includes\r\n       a fair amount of logic, which is visible in the scripts\r\n       tab. Please be invited to ask the authors if you have\r\n       any questions!\r\n  -->\r\n  \r\n  <table class=\"table-plain table-span-recall\">\r\n    <tr>\r\n      <td>\r\n        <button style=\"background: url(https://i.imgur.com/0zfClRj.png)\" name=\"1\"/>\r\n      </td>\r\n      <td>\r\n        <button style=\"background: url(https://i.imgur.com/9SJrisL.png)\" name=\"2\"/>\r\n      </td>\r\n      <td>\r\n        <button style=\"background: url(https://i.imgur.com/vdiDqQf.png)\" name=\"3\"/>\r\n      </td>\r\n      <td>\r\n        <button style=\"background: url(https://i.imgur.com/BKpRvXW.png)\" name=\"4\"/>\r\n      </td>\r\n      <td>\r\n        <button style=\"background: url(https://i.imgur.com/oaCnXTO.png)\" name=\"4\"/>\r\n    </tr>\r\n    <tr>\r\n      <td colspan=\"9\">\r\n        <button name=\"done\">Done &rarr;</button>\r\n      </td>\r\n    </tr>\r\n  </table>\r\n</main>\r\n<footer>\r\n  <strong>Select the Image that represent your emotion the most.</strong><br>\r\n  Then, please click <kbd>Done</kbd> to continue.\r\n</footer>"
     },
+    "5": {
+      "id": "5",
+      "type": "lab.html.Screen",
+      "responses": {
+        "rows": [
+          [
+            "Continue",
+            "keypress",
+            "",
+            "Space"
+          ]
+        ]
+      },
+      "messageHandlers": {
+        "rows": [
+          [
+            {
+              "title": "",
+              "message": "",
+              "code": ""
+            }
+          ]
+        ]
+      },
+      "parameters": {
+        "rows": [
+          [
+            {
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        ]
+      },
+      "files": {
+        "rows": []
+      },
+      "_tab": "Content",
+      "title": "Landing page",
+      "content": "<header> \r\n  <h2> Difference between liking and emotion within Human Judgment </h2> \r\n</header>\r\n\r\n<style>\r\naside {\r\n  width: 45%;\r\n  padding: 20px 40px;\r\n  margin-top: 40px;\r\n  margin-bottom: 40px;\r\n  margin-left: 30px; \r\n  float: text-centered-justify;\r\n  background-color: lightyellow;\r\n}\r\nsection{\r\n  width: 45%;\r\n  padding: 10px 30px;\r\n  margin-top: -620px;\r\n  margin-right: 30px; \r\n  float: right;\r\n  background-color: lightyellow;\r\n}\r\n</style>\r\n\r\n\r\n<main>\r\n  <p><h4><em>Welcome!</em> This is a study conducted by students studying at KTH. The data contuducted from this study will be used in the course DM2350 at KTH. We appriciate you taking part, please read through the following information carefully before starting the test. </h4></p>\r\n\r\n  <p>The interest here is to examine how variations in a particular feature relate to variations in judgments of liking and perceived emotions. We will ask you to rate a few images and sounds based on you personal liking and perceived emotion when interacting with the elements. We will then ask you to give some feedback and answer a short questionnaire. This will not take long, the whole session should take XX minutes.</p>\r\n\r\n<aside>\r\n  <div class=\"text-centered-justify\">\r\n    <h3>Technical</h3>\r\n    <div class=\"text-centered-justify\">\r\n    <p>The study uses web technologies and should work properly on any browser however we encourage you to use Chrome or Firefox. Please set your screen resolution to XX and… We edvice you to use a decent headphone set to comfortable levels and please be seated in a quiet room with good internet connection and no distractions. </p>\r\n    </div>\r\n  </div>\r\n</aside>\r\n\r\n<aside>\r\n  <div class=\"text-centered-justify\">\r\n    <h3>Eligibility</h3>\r\n    <div class=\"text-centered-justify\">\r\n    <p><em>You do not need previous knowledge in music or art to participate!</em></p>\r\n    <p>However, to perform this test you have to be 18 years old or above, have normal or corrected-to-normal vision and hearing. </p>\r\n    </div>\r\n  </div>\r\n</aside>\r\n\r\n<section>\r\n  <div class=\"text-centered-justify\">\r\n    <h3>Disclaimer</h3>\r\n      <p><em>Your participation is entirely voluntary and anonymous.</em></p>\r\n\r\n      <p>All data are treated in strict confidence and handled securely. The\r\n        anonymised data will be made available to other researchers, however, the results of the study will not be published. This research implies no known risks or direct benefits.</p>\r\n\r\n      <p>Please, click the button below to confirm your participation. You are welcome to withdraw at any time and without justification. To do that, simply close the browser window.</p>\r\n    </div>\r\n    <div class=\"w-m text-justify\">\r\n      <p>By clicking the button you confirm and agree to the following: \r\n        <ul>\r\n          <li>I am aged 18 or above.</li>\r\n          <li>I have normal or corrected-to-normal vision and hearing.</li>\r\n          <li>I have no cognative impairments.</li>\r\n          <li>I have read through and understood the disclaimer and information above, and agree to participate.</li>\r\n        </ul>\r\n    </div>\r\n</section>\r\n</main>\r\n\r\n\r\n<footer>\r\n  Please press <kbd>Space</kbd> to continue.\r\n</footer>"
+    },
     "6": {
       "id": "6",
       "type": "lab.html.Frame",
@@ -363,6 +405,7 @@
       "title": "root",
       "type": "lab.flow.Sequence",
       "children": [
+        "5",
         "6"
       ],
       "parameters": {
