@@ -33,14 +33,14 @@
             {
               "title": "handle button input",
               "message": "before:prepare",
-              "code": "// Create an empty array that collects responses\r\nthis.data.responses = []\r\n\r\nconst updateButtons = () => {\r\n  document\r\n    .querySelectorAll('button')\r\n    .forEach(\r\n      button => button.disabled = \r\n        this.data.responses.includes(button.attributes.name.value)\r\n    )\r\n}\r\n\r\n// Setup handler for button clicks\r\nthis.options.events['click button'] = function(event) {\r\n  // Which button was clicked?\r\n  this.data.responses.pop()\r\n  updateButtons()\r\n  const button = event.currentTarget.attributes.name.value\r\n\r\n  // Terminate screen if participant is done,\r\n  // otherwise log response, deactivate button,\r\n  // and continue.\r\n  if (button === 'done') {\r\n    this.end('done')\r\n  } else if (button === 'undo') {\r\n    // Remove last response\r\n    this.data.responses.pop()\r\n\r\n    // Update buttons\r\n    updateButtons()\r\n  } else {\r\n    // Add response to data\r\n    this.data.responses.push(button)\r\n    \r\n    // Update buttons\r\n    updateButtons()\r\n  }\r\n}"
+              "code": "// Create an empty array that collects responses\r\nthis.data.responses = []\r\n\r\nconst updateButtons = () => {\r\n  document\r\n    .querySelectorAll('button')\r\n    .forEach(\r\n      button => button.disabled = \r\n        this.data.responses.includes(button.attributes.name.value)\r\n    )\r\n}\r\n\r\n// Setup handler for button clicks\r\nthis.options.events['click button'] = function(event) {\r\n  // Which button was clicked?\r\n  this.data.responses.pop()\r\n  updateButtons()\r\n  const button = event.currentTarget.attributes.name.value\r\n\r\n  // Terminate screen if participant is done,\r\n  // otherwise log response, deactivate button,\r\n  // and continue.\r\n  if (button === 'done') {\r\n    this.end('done')\r\n  } \r\n}"
             }
           ]
         ]
       },
       "title": "Screen",
-      "_tab": "Content",
-      "content": "<main class=\"content-horizontal-center content-vertical-center\">\r\n  <!-- Table styles are specified in the overall study CSS,\r\n       please see study options. This screen also includes\r\n       a fair amount of logic, which is visible in the scripts\r\n       tab. Please be invited to ask the authors if you have\r\n       any questions!\r\n  -->\r\n  <table class=\"table-plain table-span-recall\">\r\n    <tr>\r\n      <td>\r\n        <button name=\"1\">1</button>\r\n      </td>\r\n      <td>\r\n        <button name=\"2\">2</button>\r\n      </td>\r\n      <td>\r\n        <button name=\"3\">3</button>\r\n      </td>\r\n      <td>\r\n        <button name=\"4\">4</button>\r\n      </td>\r\n      <td>\r\n        <button name=\"5\">5</button>\r\n    </tr>\r\n    <tr>\r\n      <td colspan=\"9\">\r\n        <button name=\"done\">Done &rarr;</button>\r\n      </td>\r\n    </tr>\r\n  </table>\r\n</main>\r\n<footer>\r\n  <strong>Please select the numbers you just saw, in the order they were presented.</strong><br>\r\n  When you have chosen all you can recall, please click <kbd>Done</kbd> to continue.\r\n</footer>"
+      "_tab": "Scripts",
+      "content": "<main class=\"content-horizontal-center content-vertical-center\">\r\n  <!-- Table styles are specified in the overall study CSS,\r\n       please see study options. This screen also includes\r\n       a fair amount of logic, which is visible in the scripts\r\n       tab. Please be invited to ask the authors if you have\r\n       any questions!\r\n  -->\r\n  \r\n  <table class=\"table-plain table-span-recall\">\r\n    <tr>\r\n      <td>\r\n        <button style=\"background: url(https://i.imgur.com/0zfClRj.png)\" name=\"1\"/>\r\n      </td>\r\n      <td>\r\n        <button style=\"background: url(https://i.imgur.com/9SJrisL.png)\" name=\"2\"/>\r\n      </td>\r\n      <td>\r\n        <button style=\"background: url(https://i.imgur.com/vdiDqQf.png)\" name=\"3\"/>\r\n      </td>\r\n      <td>\r\n        <button style=\"background: url(https://i.imgur.com/BKpRvXW.png)\" name=\"4\"/>\r\n      </td>\r\n      <td>\r\n        <button style=\"background: url(https://i.imgur.com/oaCnXTO.png)\" name=\"4\"/>\r\n    </tr>\r\n    <tr>\r\n      <td colspan=\"9\">\r\n        <button name=\"done\">Done &rarr;</button>\r\n      </td>\r\n    </tr>\r\n  </table>\r\n</main>\r\n<footer>\r\n  <strong>Select the Image that represent your emotion the most.</strong><br>\r\n  Then, please click <kbd>Done</kbd> to continue.\r\n</footer>"
     },
     "root": {
       "id": "root",
@@ -85,7 +85,7 @@
         "source": "library"
       },
       "style.css": {
-        "content": "data:text/css,%2F*%20Please%20define%20your%20custom%20styles%20here%20*%2F",
+        "content": "data:text/css,%2F*%20Please%20define%20your%20custom%20styles%20here%20*%2F%0D%0Abutton%20%7B%0D%0A%20%20border%3A%201px%20solid%20%23ddd%3B%0D%0A%20%20height%3A%20123px%3B%0D%0A%20%20width%3A%20137px%3B%0D%0A%7D",
         "source": "library"
       }
     },
