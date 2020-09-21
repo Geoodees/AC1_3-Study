@@ -1,0 +1,606 @@
+{
+  "components": {
+    "1": {
+      "id": "1",
+      "type": "lab.flow.Loop",
+      "children": [
+        "2"
+      ],
+      "templateParameters": {
+        "columns": [
+          {
+            "name": "task",
+            "type": "string"
+          },
+          {
+            "name": "block",
+            "type": "string"
+          },
+          {
+            "name": "stimulus",
+            "type": "string"
+          },
+          {
+            "name": "WAV",
+            "type": "string"
+          },
+          {
+            "name": "MIDI",
+            "type": "string"
+          },
+          {
+            "name": "PNG",
+            "type": "string"
+          }
+        ],
+        "rows": [
+          [
+            "Auditory",
+            "Practice",
+            "b",
+            "b.wav",
+            "b.mid",
+            "-"
+          ],
+          [
+            "Auditory",
+            "Practice",
+            "c",
+            "c.wav",
+            "c.mid",
+            "-"
+          ],
+          [
+            "Auditory",
+            "Practice",
+            "k",
+            "k.wav",
+            "k.mid",
+            "-"
+          ],
+          [
+            "Auditory",
+            "Practice",
+            "s",
+            "s.wav",
+            "s.mid",
+            "-"
+          ],
+          [
+            "Visual",
+            "Practice",
+            "a",
+            "",
+            "",
+            "a.png"
+          ],
+          [
+            "Visual",
+            "Practice",
+            "e",
+            "",
+            "",
+            "e.png"
+          ],
+          [
+            "Visual",
+            "Practice",
+            "i",
+            "",
+            "",
+            "i.png"
+          ],
+          [
+            "Visual",
+            "Practice",
+            "o",
+            "",
+            "",
+            "o.png"
+          ]
+        ]
+      },
+      "sample": {
+        "mode": "draw-shuffle"
+      },
+      "files": {
+        "rows": []
+      },
+      "responses": {
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "parameters": {
+        "rows": [
+          [
+            {
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        ]
+      },
+      "messageHandlers": {
+        "rows": [
+          [
+            {
+              "title": "",
+              "message": "",
+              "code": ""
+            }
+          ]
+        ]
+      },
+      "title": "Loop",
+      "_tab": "Content"
+    },
+    "2": {
+      "id": "2",
+      "type": "lab.flow.Sequence",
+      "children": [
+        "3",
+        "4"
+      ],
+      "files": {
+        "rows": []
+      },
+      "responses": {
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "parameters": {
+        "rows": [
+          [
+            {
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        ]
+      },
+      "messageHandlers": {
+        "rows": [
+          [
+            {
+              "title": "",
+              "message": "",
+              "code": ""
+            }
+          ]
+        ]
+      },
+      "title": "Sequence",
+      "_tab": "Scripts"
+    },
+    "3": {
+      "id": "3",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "circle",
+          "version": "3.5.1",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": "0",
+          "width": 55,
+          "height": 55,
+          "fill": "#ffffff",
+          "stroke": "#000000",
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "radius": 27.5,
+          "startAngle": 0,
+          "endAngle": 6.283185307179586,
+          "id": "31"
+        }
+      ],
+      "viewport": [
+        800,
+        600
+      ],
+      "files": {
+        "rows": []
+      },
+      "responses": {
+        "rows": [
+          [
+            "premature",
+            "keydown",
+            "",
+            "space"
+          ]
+        ]
+      },
+      "parameters": {
+        "rows": [
+          [
+            {
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        ]
+      },
+      "messageHandlers": {
+        "rows": [
+          [
+            {
+              "title": "",
+              "message": "",
+              "code": ""
+            }
+          ]
+        ]
+      },
+      "title": "Fixation",
+      "_tab": "Content",
+      "timeout": "750"
+    },
+    "4": {
+      "id": "4",
+      "type": "lab.html.Screen",
+      "files": {
+        "rows": []
+      },
+      "responses": {
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "parameters": {
+        "rows": [
+          [
+            {
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        ]
+      },
+      "messageHandlers": {
+        "rows": [
+          [
+            {
+              "title": "handle button input",
+              "message": "before:prepare",
+              "code": "// Create an empty array that collects responses\r\nlet userResponse = \"\";\r\nthis.data.userResponse = \"\";\r\n\r\nconst updateButtons = () => {\r\n  document.querySelectorAll('button').forEach(\r\n      button => {\r\n        button.style.border = button.attributes.name.value === userResponse ? '5px solid #ffea2d' : '1px solid #dddddd';\r\n      }\r\n    )\r\n}\r\n\r\n// Setup handler for button clicks\r\nthis.options.events['click button'] = function(event) {\r\n  if (event.currentTarget.attributes.name.value != 'done') {\r\n    userResponse = event.currentTarget.attributes.name.value;\r\n    this.data.userResponse = userResponse;\r\n    updateButtons();\r\n  }\r\n  else {\r\n    this.end('done')\r\n  } \r\n}"
+            }
+          ]
+        ]
+      },
+      "title": "Screen",
+      "content": "<header>\r\n  <h2><strong>Select the image that represents your emotion the most.</strong><br>Then, please click <kbd>Done</kbd> to continue.</h2>\r\n</header>\r\n\r\n<main class=\"content-horizontal-center content-vertical-center\">\r\n  <!-- Table styles are specified in the overall study CSS,\r\n       please see study options. This screen also includes\r\n       a fair amount of logic, which is visible in the scripts\r\n       tab. Please be invited to ask the authors if you have\r\n       any questions!\r\n  -->\r\n\r\n\r\n  <table class=\"table-plain table-span-recall\">\r\n    <tr>\r\n      <td>\r\n        <button class=\"response-button\" style=\"background-image: url(https://i.imgur.com/YnkumR9.png)\" name=\"1\"/>\r\n      </td>\r\n      <td>\r\n        <button class=\"response-button\" style=\"background-image: url(https://i.imgur.com/4Zz8L9D.png)\" name=\"2\"/>\r\n      </td>\r\n      <td>\r\n        <button class=\"response-button\" style=\"background-image: url(https://i.imgur.com/RVZiQGp.png)\" name=\"3\"/>\r\n      </td>\r\n      <td>\r\n        <button class=\"response-button\" style=\"background-image: url(https://i.imgur.com/rJUkT1G.png)\" name=\"4\"/>\r\n      </td>\r\n      <td>\r\n        <button class=\"response-button\" style=\"background-image: url(https://i.imgur.com/EWLkFq5.png)\" name=\"5\"/>\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td colspan=\"9\">\r\n        <button name=\"done\">Done &rarr;</button>\r\n      </td>\r\n    </tr>\r\n  </table>\r\n</main>\r\n\r\n<style>\r\n.response-button {\r\n  background-size: cover;\r\n  background-position: center;\r\n  background-repeat: no-repeat;\r\n}\r\n</style>",
+      "_tab": "Content"
+    },
+    "5": {
+      "id": "5",
+      "type": "lab.html.Screen",
+      "responses": {
+        "rows": [
+          [
+            "Continue",
+            "keypress",
+            "",
+            "Space"
+          ]
+        ]
+      },
+      "messageHandlers": {
+        "rows": [
+          [
+            {
+              "title": "",
+              "message": "",
+              "code": ""
+            }
+          ]
+        ]
+      },
+      "parameters": {
+        "rows": [
+          [
+            {
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        ]
+      },
+      "files": {
+        "rows": []
+      },
+      "_tab": "Content",
+      "title": "Landing page",
+      "content": "<header> \r\n  <h2> Difference between liking and emotion within human judgment </h2> \r\n</header>\r\n\r\n<style>\r\naside {\r\n  width: 45%;\r\n  padding: 20px 40px;\r\n  margin-top: 40px;\r\n  margin-bottom: 40px;\r\n  margin-left: 30px; \r\n  float: text-centered-justify;\r\n  background-color: lightyellow;\r\n}\r\nsection {\r\n  width: 45%;\r\n  padding: 10px 30px;\r\n  margin-top: -540px;\r\n  margin-right: 30px; \r\n  float: right;\r\n  background-color: lightyellow;\r\n}\r\n</style>\r\n\r\n\r\n<main>\r\n  <p><h4><em>Welcome!</em> This is a study conducted by students at KTH. The data gathered from this study will be used in the course Human Perception for Information Technology. We appreciate you taking part, please read the following information carefully before starting the test. </h4></p>\r\n\r\n  <p>The interest here is to examine how variations in a particular feature relate to variations in judgments of liking and perceived emotions. We will ask you to rate a few images and sounds based on you personal liking and perceived emotion when interacting with the elements. We will then ask you to give some feedback and answer a short questionnaire. This will not take long, the whole session should take XX minutes.</p>\r\n\r\n<aside>\r\n  <div class=\"text-centered-justify\">\r\n    <h3>Technical</h3>\r\n    <div class=\"text-centered-justify\">\r\n    <p>The study uses web technologies and should work properly on any browser. However, we encourage you to use Chrome or Firefox. Please set your screen resolution to XX. We advice you to use a headphone set to comfortable volume levels and please stay in a quiet room with a stable internet connection and no distractions. </p>\r\n    </div>\r\n  </div>\r\n</aside>\r\n\r\n<aside>\r\n  <div class=\"text-centered-justify\">\r\n    <h3>Eligibility</h3>\r\n    <div class=\"text-centered-justify\">\r\n    <p><em>You do not need previous knowledge in music or art to participate!</em></p>\r\n    <p>However, to perform this test you have to be 18 years old or above, have normal or corrected-to-normal vision and hearing. </p>\r\n    </div>\r\n  </div>\r\n</aside>\r\n\r\n<section>\r\n  <div class=\"text-centered-justify\">\r\n    <h3>Disclaimer</h3>\r\n      <p><em>Your participation is entirely voluntary and anonymous.</em></p>\r\n\r\n      <p>All data are treated in strict confidence and handled securely. The\r\n        anonymised data will be made available to other researchers, however, the results of the study will not be published. This research implies no known risks or direct benefits.</p>\r\n\r\n      <p>Please, click the button below to confirm your participation. You are welcome to withdraw at any time and without justification. To do that, simply close the browser window.</p>\r\n    </div>\r\n    <div class=\"w-m text-justify\">\r\n      <p>By clicking the button you confirm and agree to the following: \r\n        <ul>\r\n          <li>I am aged 18 or above.</li>\r\n          <li>I have normal or corrected-to-normal vision and hearing.</li>\r\n          <li>I have no cognative impairments.</li>\r\n          <li>I have read through and understood the disclaimer and information above, and agree to participate.</li>\r\n        </ul>\r\n    </div>\r\n</section>\r\n</main>\r\n\r\n\r\n<footer>\r\n  Please press <kbd>Space</kbd> to continue.\r\n</footer>"
+    },
+    "6": {
+      "id": "6",
+      "type": "lab.html.Frame",
+      "context": "<!-- Nested components use this canvas -->\n<canvas />",
+      "contextSelector": "[data-labjs-section=\"frame\"]",
+      "files": {
+        "rows": []
+      },
+      "responses": {
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "parameters": {
+        "rows": [
+          [
+            {
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        ]
+      },
+      "messageHandlers": {
+        "rows": [
+          [
+            {
+              "title": "",
+              "message": "",
+              "code": ""
+            }
+          ]
+        ]
+      },
+      "title": "Frame",
+      "children": [
+        "1"
+      ],
+      "_tab": "Scripts"
+    },
+    "7": {
+      "id": "7",
+      "type": "lab.html.Form",
+      "scrollTop": true,
+      "files": {
+        "rows": []
+      },
+      "responses": {
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "parameters": {
+        "rows": [
+          [
+            {
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        ]
+      },
+      "messageHandlers": {
+        "rows": [
+          [
+            {
+              "title": "",
+              "message": "",
+              "code": ""
+            }
+          ]
+        ]
+      },
+      "title": "Form",
+      "content": "<header>\n  <h2> Only one form to go!</h2>\n</header>\n\n<style>\naside {\n  width: 50%;\n  padding: 20px 40px;\n  margin-top: 10px;\n  margin-bottom: 40px;\n  margin-left: 450px; \n  float: text-centered-justify;\n  background-color: lightyellow;\n}\n</style>\n\n<form>\n  <div class=\"text-center-justify\">\n    <aside>\n      <p>What is your age: <input name=\"age\" type=\"number\"></p>\n\n      <p>What is your gender: </p>       \n        <input type=\"radio\" name=\"gender\" value=\"woman\" >Woman<br>\n        <input type=\"radio\" name=\"gender\" value=\"man\" >Man<br>\n        <input type=\"radio\" name=\"gender\" value=\"other\" >Other<br>\n    \n\n      <p>What is your highest level of completed education? </p>\n        <input type=\"radio\" name=\"education\" value=\"primary_school\" >Primary school or equivalent<br>\n        <input type=\"radio\" name=\"education\" value=\"high_school\" >High school or equivalent<br>\n        <input type=\"radio\" name=\"education\" value=\"post_secondary\" >Post-secondary education, not college / university<br>\n        <input type=\"radio\" name=\"education\" value=\"at_college_uni\" >Studies at college / university<br>\n        <input type=\"radio\" name=\"education\" value=\"degree\" >Degree from college / university<br>\n    \n      <p>Do you have an education in music?:  </p>\n        <input type=\"radio\" name=\"music_education\" value=\"yes\" >Yes<br>\n        <input type=\"radio\" name=\"music_education\" value=\"no\" >No<br>\n    \n      <p>Do you have an education in visual art?: </p>\n        <input type=\"radio\" name=\"visual_education\" value=\"yes\" >Yes<br>\n        <input type=\"radio\" name=\"visual_education\" value=\"no\" >No<br>\n      <br>\n      <br>\n      <br>\n    </aside>\n  </div>\n\n  <div class=\"text-center\">\n    <button type=\"submit\">\n      Submit\n    </button>\n  </div>\n   \n</form>"
+    },
+    "11": {
+      "id": "11",
+      "type": "lab.html.Form",
+      "scrollTop": true,
+      "files": {
+        "rows": []
+      },
+      "responses": {
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "parameters": {
+        "rows": [
+          [
+            {
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        ]
+      },
+      "messageHandlers": {
+        "rows": [
+          [
+            {
+              "title": "",
+              "message": "",
+              "code": ""
+            }
+          ]
+        ]
+      },
+      "title": "Form",
+      "content": "<header>\n  <h2>The Need for Cognition Scale</h2>\n  <p> When answering the questionnoaire you will be ask to rate the questions from -4 to +4.  The scaling has the following meaning:</p>\n  <p> 4 = Very strong agreement, +3 = Strong agreement, +2 = Moderate agreement, +1 = Slight agreement, 0 = Neither agreement nor disagreement, -1 = Slight disagreement, -2 = Moderate disagreement, -3 = Strong disagreement, -4 = Very strong disagreement</p>\n  <p> If you see a * next to one of the questions it means that you are supposed to score it in revers.</p> \n</header>\n\n<style>\naside {\n  width: 50%;\n  padding: 20px 40px;\n  margin-top: 10px;\n  margin-bottom: 40px;\n  margin-left: 500px; \n  float: text-centered-justify;\n  background-color: lightyellow;\n}\n</style>\n\n<main>\n  <form>\n    <div class=\"text-justify\">\n      <aside>\n        <p>1. I would prefer complex to simple problems.</p>\n        <input type=\"radio\" name=\"1\" value=\"-4\">-4\n        <input type=\"radio\" name=\"1\" value=\"-3\">-3\n        <input type=\"radio\" name=\"1\" value=\"-2\">-2\n        <input type=\"radio\" name=\"1\" value=\"-1\">-1\n        <input type=\"radio\" name=\"1\" value=\"0\">0\n        <input type=\"radio\" name=\"1\" value=\"+1\">+1\n        <input type=\"radio\" name=\"1\" value=\"+2\">+2\n        <input type=\"radio\" name=\"1\" value=\"+3\">+3\n        <input type=\"radio\" name=\"1\" value=\"+4\">+4\n\n        <p>2. I like to have the responsibility of handling a situation that requires a lot of thinking.</p>\n        <input type=\"radio\" name=\"2\" value=\"-4\">-4\n        <input type=\"radio\" name=\"2\" value=\"-3\">-3\n        <input type=\"radio\" name=\"2\" value=\"-2\">-2\n        <input type=\"radio\" name=\"2\" value=\"-1\">-1\n        <input type=\"radio\" name=\"2\" value=\"0\">0\n        <input type=\"radio\" name=\"2\" value=\"+1\">+1\n        <input type=\"radio\" name=\"2\" value=\"+2\">+2\n        <input type=\"radio\" name=\"2\" value=\"+3\">+3\n        <input type=\"radio\" name=\"2\" value=\"+4\">+4\n\n        <p>3. Thinking is not my idea of fun.* </p>\n        <input type=\"radio\" name=\"3\" value=\"-4\">-4\n        <input type=\"radio\" name=\"3\" value=\"-3\">-3\n        <input type=\"radio\" name=\"3\" value=\"-2\">-2\n        <input type=\"radio\" name=\"3\" value=\"-1\">-1\n        <input type=\"radio\" name=\"3\" value=\"0\">0\n        <input type=\"radio\" name=\"3\" value=\"+1\">+1\n        <input type=\"radio\" name=\"3\" value=\"+2\">+2\n        <input type=\"radio\" name=\"3\" value=\"+3\">+3\n        <input type=\"radio\" name=\"3\" value=\"+4\">+4\n\n        <p>4. I would rather do something that requires little thought than something that is sure to challenge my thinking abilities.* </p>\n        <input type=\"radio\" name=\"4\" value=\"-4\">-4\n        <input type=\"radio\" name=\"4\" value=\"-3\">-3\n        <input type=\"radio\" name=\"4\" value=\"-2\">-2\n        <input type=\"radio\" name=\"4\" value=\"-1\">-1\n        <input type=\"radio\" name=\"4\" value=\"0\">0\n        <input type=\"radio\" name=\"4\" value=\"+1\">+1\n        <input type=\"radio\" name=\"4\" value=\"+2\">+2\n        <input type=\"radio\" name=\"4\" value=\"+3\">+3\n        <input type=\"radio\" name=\"4\" value=\"+4\">+4\n\n        <p>5. I try to anticipate and avoid situations where there is likely chance I will have to think in depth about something.* </p>\n        <input type=\"radio\" name=\"5\" value=\"-4\">-4\n        <input type=\"radio\" name=\"5\" value=\"-3\">-3\n        <input type=\"radio\" name=\"5\" value=\"-2\">-2\n        <input type=\"radio\" name=\"5\" value=\"-1\">-1\n        <input type=\"radio\" name=\"5\" value=\"0\">0\n        <input type=\"radio\" name=\"5\" value=\"+1\">+1\n        <input type=\"radio\" name=\"5\" value=\"+2\">+2\n        <input type=\"radio\" name=\"5\" value=\"+3\">+3\n        <input type=\"radio\" name=\"5\" value=\"+4\">+4\n\n        <p>6. I find satisfaction in deliberating hard and for long hours. </p>\n        <input type=\"radio\" name=\"6\" value=\"-4\">-4\n        <input type=\"radio\" name=\"6\" value=\"-3\">-3\n        <input type=\"radio\" name=\"6\" value=\"-2\">-2\n        <input type=\"radio\" name=\"6\" value=\"-1\">-1\n        <input type=\"radio\" name=\"6\" value=\"0\">0\n        <input type=\"radio\" name=\"6\" value=\"+1\">+1\n        <input type=\"radio\" name=\"6\" value=\"+2\">+2\n        <input type=\"radio\" name=\"6\" value=\"+3\">+3\n        <input type=\"radio\" name=\"6\" value=\"+4\">+4\n\n        <p>7. I only think as hard as I have to. * </p>\n        <input type=\"radio\" name=\"7\" value=\"-4\">-4\n        <input type=\"radio\" name=\"7\" value=\"-3\">-3\n        <input type=\"radio\" name=\"7\" value=\"-2\">-2\n        <input type=\"radio\" name=\"7\" value=\"-1\">-1\n        <input type=\"radio\" name=\"7\" value=\"0\">0\n        <input type=\"radio\" name=\"7\" value=\"+1\">+1\n        <input type=\"radio\" name=\"7\" value=\"+2\">+2\n        <input type=\"radio\" name=\"7\" value=\"+3\">+3\n        <input type=\"radio\" name=\"7\" value=\"+4\">+4\n\n        <p>8. I prefer to think about small, daily projects to long-term ones.* </p>\n        <input type=\"radio\" name=\"8\" value=\"-4\">-4\n        <input type=\"radio\" name=\"8\" value=\"-3\">-3\n        <input type=\"radio\" name=\"8\" value=\"-2\">-2\n        <input type=\"radio\" name=\"8\" value=\"-1\">-1\n        <input type=\"radio\" name=\"8\" value=\"0\">0\n        <input type=\"radio\" name=\"8\" value=\"+1\">+1\n        <input type=\"radio\" name=\"8\" value=\"+2\">+2\n        <input type=\"radio\" name=\"8\" value=\"+3\">+3\n        <input type=\"radio\" name=\"8\" value=\"+4\">+4\n\n        <p>9. I like tasks that require little thought once I've learned them.* </p>\n        <input type=\"radio\" name=\"9\" value=\"-4\">-4\n        <input type=\"radio\" name=\"9\" value=\"-3\">-3\n        <input type=\"radio\" name=\"9\" value=\"-2\">-2\n        <input type=\"radio\" name=\"9\" value=\"-1\">-1\n        <input type=\"radio\" name=\"9\" value=\"0\">0\n        <input type=\"radio\" name=\"9\" value=\"+1\">+1\n        <input type=\"radio\" name=\"9\" value=\"+2\">+2\n        <input type=\"radio\" name=\"9\" value=\"+3\">+3\n        <input type=\"radio\" name=\"9\" value=\"+4\">+4\n\n        <p>10. The idea of relying on thought to make my way to the top appeals to me. </p>\n        <input type=\"radio\" name=\"10\" value=\"-4\">-4\n        <input type=\"radio\" name=\"10\" value=\"-3\">-3\n        <input type=\"radio\" name=\"10\" value=\"-2\">-2\n        <input type=\"radio\" name=\"10\" value=\"-1\">-1\n        <input type=\"radio\" name=\"10\" value=\"0\">0\n        <input type=\"radio\" name=\"10\" value=\"+1\">+1\n        <input type=\"radio\" name=\"10\" value=\"+2\">+2\n        <input type=\"radio\" name=\"10\" value=\"+3\">+3\n        <input type=\"radio\" name=\"10\" value=\"+4\">+4\n\n        <p>11. I really enjoy a task that involves coming up with new solutions to problems. </p>\n        <input type=\"radio\" name=\"11\" value=\"-4\">-4\n        <input type=\"radio\" name=\"11\" value=\"-3\">-3\n        <input type=\"radio\" name=\"11\" value=\"-2\">-2\n        <input type=\"radio\" name=\"11\" value=\"-1\">-1\n        <input type=\"radio\" name=\"11\" value=\"0\">0\n        <input type=\"radio\" name=\"11\" value=\"+1\">+1\n        <input type=\"radio\" name=\"11\" value=\"+2\">+2\n        <input type=\"radio\" name=\"11\" value=\"+3\">+3\n        <input type=\"radio\" name=\"11\" value=\"+4\">+4\n\n        <p>12. Learning new ways to think doesn't excite me very much.* </p>\n        <input type=\"radio\" name=\"12\" value=\"-4\">-4\n        <input type=\"radio\" name=\"12\" value=\"-3\">-3\n        <input type=\"radio\" name=\"12\" value=\"-2\">-2\n        <input type=\"radio\" name=\"12\" value=\"-1\">-1\n        <input type=\"radio\" name=\"12\" value=\"0\">0\n        <input type=\"radio\" name=\"12\" value=\"+1\">+1\n        <input type=\"radio\" name=\"12\" value=\"+2\">+2\n        <input type=\"radio\" name=\"12\" value=\"+3\">+3\n        <input type=\"radio\" name=\"12\" value=\"+4\">+4\n\n        <p>13. I prefer my life to be filled with puzzles that I must solve. </p>\n        <input type=\"radio\" name=\"13\" value=\"-4\">-4\n        <input type=\"radio\" name=\"13\" value=\"-3\">-3\n        <input type=\"radio\" name=\"13\" value=\"-2\">-2\n        <input type=\"radio\" name=\"13\" value=\"-1\">-1\n        <input type=\"radio\" name=\"13\" value=\"0\">0\n        <input type=\"radio\" name=\"13\" value=\"+1\">+1\n        <input type=\"radio\" name=\"13\" value=\"+2\">+2\n        <input type=\"radio\" name=\"13\" value=\"+3\">+3\n        <input type=\"radio\" name=\"13\" value=\"+4\">+4\n\n        <p>14. The notion of thinking abstractly is appealing to me. </p>\n        <input type=\"radio\" name=\"14\" value=\"-4\">-4\n        <input type=\"radio\" name=\"14\" value=\"-3\">-3\n        <input type=\"radio\" name=\"14\" value=\"-2\">-2\n        <input type=\"radio\" name=\"14\" value=\"-1\">-1\n        <input type=\"radio\" name=\"14\" value=\"0\">0\n        <input type=\"radio\" name=\"14\" value=\"+1\">+1\n        <input type=\"radio\" name=\"14\" value=\"+2\">+2\n        <input type=\"radio\" name=\"14\" value=\"+3\">+3\n        <input type=\"radio\" name=\"14\" value=\"+4\">+4\n\n        <p>15. I would prefer a task that is intellectual, difficult, and important to one that is somewhat important but does not require much thought. </p>\n        <input type=\"radio\" name=\"15\" value=\"-4\">-4\n        <input type=\"radio\" name=\"15\" value=\"-3\">-3\n        <input type=\"radio\" name=\"15\" value=\"-2\">-2\n        <input type=\"radio\" name=\"15\" value=\"-1\">-1\n        <input type=\"radio\" name=\"15\" value=\"0\">0\n        <input type=\"radio\" name=\"15\" value=\"+1\">+1\n        <input type=\"radio\" name=\"15\" value=\"+2\">+2\n        <input type=\"radio\" name=\"15\" value=\"+3\">+3\n        <input type=\"radio\" name=\"15\" value=\"+4\">+4\n\n        <p>16. I feel relief rather than satisfaction after completing a task that required a lot of mental effort.* </p>\n        <input type=\"radio\" name=\"16\" value=\"-4\">-4\n        <input type=\"radio\" name=\"16\" value=\"-3\">-3\n        <input type=\"radio\" name=\"16\" value=\"-2\">-2\n        <input type=\"radio\" name=\"16\" value=\"-1\">-1\n        <input type=\"radio\" name=\"16\" value=\"0\">0\n        <input type=\"radio\" name=\"16\" value=\"+1\">+1\n        <input type=\"radio\" name=\"16\" value=\"+2\">+2\n        <input type=\"radio\" name=\"16\" value=\"+3\">+3\n        <input type=\"radio\" name=\"16\" value=\"+4\">+4\n\n        <p>17. It's enough for me that something gets the job done; I don't care how or why it works.* </p>\n        <input type=\"radio\" name=\"17\" value=\"-4\">-4\n        <input type=\"radio\" name=\"17\" value=\"-3\">-3\n        <input type=\"radio\" name=\"17\" value=\"-2\">-2\n        <input type=\"radio\" name=\"17\" value=\"-1\">-1\n        <input type=\"radio\" name=\"17\" value=\"0\">0\n        <input type=\"radio\" name=\"17\" value=\"+1\">+1\n        <input type=\"radio\" name=\"17\" value=\"+2\">+2\n        <input type=\"radio\" name=\"17\" value=\"+3\">+3\n        <input type=\"radio\" name=\"17\" value=\"+4\">+4\n\n        <p>18. I usually end up deliberating about issues even when they do not affect me personally. </p>\n        <input type=\"radio\" name=\"18\" value=\"-4\">-4\n        <input type=\"radio\" name=\"18\" value=\"-3\">-3\n        <input type=\"radio\" name=\"18\" value=\"-2\">-2\n        <input type=\"radio\" name=\"18\" value=\"-1\">-1\n        <input type=\"radio\" name=\"18\" value=\"0\">0\n        <input type=\"radio\" name=\"18\" value=\"+1\">+1\n        <input type=\"radio\" name=\"18\" value=\"+2\">+2\n        <input type=\"radio\" name=\"18\" value=\"+3\">+3\n        <input type=\"radio\" name=\"18\" value=\"+4\">+4\n      </aside>\n    </div>\n\n    <button type=\"submit\">\n      Submit\n    </button>\n  </form>\n</main>"
+    },
+    "14": {
+      "id": "14",
+      "type": "lab.html.Form",
+      "scrollTop": true,
+      "files": {
+        "rows": []
+      },
+      "responses": {
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "parameters": {
+        "rows": [
+          [
+            {
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        ]
+      },
+      "messageHandlers": {
+        "rows": [
+          [
+            {
+              "title": "",
+              "message": "",
+              "code": ""
+            }
+          ]
+        ]
+      },
+      "title": "Form",
+      "content": "<header>\n  <h2>The Need for Emotion Scale</h2>\n  <p> When answering the questionnoaire you will be ask to rate the questions from -2 to 2.  The scaling has the following meaning:</p>\n  <p> +2 = Strongly Agree, +1 = Slight agreement, 0 = Neither agreement nor disagreement, -1 = Slight disagreement, -2 = Strongly Disagree </p>\n <p> If you see a * next to one of the questions it means that you are supposed to score it in revers.</p> \n</header>\n\n<style>\naside {\n  width: 50%;\n  padding: 20px 40px;\n  margin-top: 10px;\n  margin-bottom: 40px;\n  margin-left: 500px; \n  float: text-centered-justify;\n  background-color: lightyellow;\n}\n</style>\n\n<main>\n  <form>\n    <div class=\"text-justify\">\n      <aside>\n        <p>1. I try to anticipate and avoid situations where there is a likely chance of my getting emotionally involved. * </p>\n        <input type=\"radio\" name=\"1\" value=\"-2\">-2\n        <input type=\"radio\" name=\"1\" value=\"-1\">-1\n        <input type=\"radio\" name=\"1\" value=\"0\">0\n        <input type=\"radio\" name=\"1\" value=\"+1\">+1\n        <input type=\"radio\" name=\"1\" value=\"+2\">+2\n\n        <p>2. Experiencing strong emotions is not something I enjoy very much. * </p>\n        <input type=\"radio\" name=\"2\" value=\"-2\">-2\n        <input type=\"radio\" name=\"2\" value=\"-1\">-1\n        <input type=\"radio\" name=\"2\" value=\"0\">0\n        <input type=\"radio\" name=\"2\" value=\"+1\">+1\n        <input type=\"radio\" name=\"2\" value=\"+2\">+2\n\n        <p>3. I would rather be in a situation in which I experience little emotion than one which is sure to get me emotionally involved. * </p>\n        <input type=\"radio\" name=\"3\" value=\"-2\">-2\n        <input type=\"radio\" name=\"3\" value=\"-1\">-1\n        <input type=\"radio\" name=\"3\" value=\"0\">0\n        <input type=\"radio\" name=\"3\" value=\"+1\">+1\n        <input type=\"radio\" name=\"3\" value=\"+2\">+2\n\n        <p>4. I don't look forward to being in situations that others have found to be emotional. * </p>\n        <input type=\"radio\" name=\"4\" value=\"-2\">-2\n        <input type=\"radio\" name=\"4\" value=\"-1\">-1\n        <input type=\"radio\" name=\"4\" value=\"0\">0\n        <input type=\"radio\" name=\"4\" value=\"+1\">+1\n        <input type=\"radio\" name=\"4\" value=\"+2\">+2\n\n        <p>5. I look forward to situations that I know are less emotionally involving. * </p>\n        <input type=\"radio\" name=\"5\" value=\"-2\">-2\n        <input type=\"radio\" name=\"5\" value=\"-1\">-1\n        <input type=\"radio\" name=\"5\" value=\"0\">0\n        <input type=\"radio\" name=\"5\" value=\"+1\">+1\n        <input type=\"radio\" name=\"5\" value=\"+2\">+2\n\n        <p>6. I like to be unemotional in emotional situations. *  </p>\n        <input type=\"radio\" name=\"6\" value=\"-2\">-2\n        <input type=\"radio\" name=\"6\" value=\"-1\">-1\n        <input type=\"radio\" name=\"6\" value=\"0\">0\n        <input type=\"radio\" name=\"6\" value=\"+1\">+1\n        <input type=\"radio\" name=\"6\" value=\"+2\">+2\n\n        <p>7. I find little satisfaction in experiencing strong emotions. * </p>\n        <input type=\"radio\" name=\"7\" value=\"-2\">-2\n        <input type=\"radio\" name=\"7\" value=\"-1\">-1\n        <input type=\"radio\" name=\"7\" value=\"0\">0\n        <input type=\"radio\" name=\"7\" value=\"+1\">+1\n        <input type=\"radio\" name=\"7\" value=\"+2\">+2\n\n        <p>8. I prefer to keep my feelings under check. * </p>\n        <input type=\"radio\" name=\"8\" value=\"-2\">-2\n        <input type=\"radio\" name=\"8\" value=\"-1\">-1\n        <input type=\"radio\" name=\"8\" value=\"0\">0\n        <input type=\"radio\" name=\"8\" value=\"+1\">+1\n        <input type=\"radio\" name=\"8\" value=\"+2\">+2\n\n        <p>9. I feel relief rather than fulfilled after experiencing a situation that was very emotional. * </p>\n        <input type=\"radio\" name=\"9\" value=\"-2\">-2\n        <input type=\"radio\" name=\"9\" value=\"-1\">-1\n        <input type=\"radio\" name=\"9\" value=\"0\">0\n        <input type=\"radio\" name=\"9\" value=\"+1\">+1\n        <input type=\"radio\" name=\"9\" value=\"+2\">+2\n\n        <p>10. I prefer to ignore the emotional aspects of situations rather than getting involved in them. *  </p>\n        <input type=\"radio\" name=\"10\" value=\"-2\">-2\n        <input type=\"radio\" name=\"10\" value=\"-1\">-1\n        <input type=\"radio\" name=\"10\" value=\"0\">0\n        <input type=\"radio\" name=\"10\" value=\"+1\">+1\n        <input type=\"radio\" name=\"10\" value=\"+2\">+2\n\n        <p>11.More often than not, making decisions based on emotions just leads to more errors. * </p>\n        <input type=\"radio\" name=\"11\" value=\"-2\">-2\n        <input type=\"radio\" name=\"11\" value=\"-1\">-1\n        <input type=\"radio\" name=\"11\" value=\"0\">0\n        <input type=\"radio\" name=\"11\" value=\"+1\">+1\n        <input type=\"radio\" name=\"11\" value=\"+2\">+2\n\n        <p>12. I don't like to have the responsibility of handling a situation that is emotional in nature. * </p>\n        <input type=\"radio\" name=\"12\" value=\"-2\">-2\n        <input type=\"radio\" name=\"12\" value=\"-1\">-1\n        <input type=\"radio\" name=\"12\" value=\"0\">0\n        <input type=\"radio\" name=\"12\" value=\"+1\">+1\n        <input type=\"radio\" name=\"12\" value=\"+2\">+2\n      </aside>\n    </div>\n\n    <button type=\"submit\">\n      Submit\n    </button>\n  </form>\n</main>"
+    },
+    "root": {
+      "id": "root",
+      "title": "root",
+      "type": "lab.flow.Sequence",
+      "parameters": {
+        "rows": [
+          [
+            {
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        ]
+      },
+      "plugins": [
+        {
+          "type": "lab.plugins.Metadata"
+        }
+      ],
+      "metadata": {
+        "title": "",
+        "description": "",
+        "repository": "",
+        "contributors": ""
+      },
+      "children": [
+        "5",
+        "6",
+        "11",
+        "14",
+        "7"
+      ]
+    }
+  },
+  "version": [
+    20,
+    1,
+    1
+  ],
+  "files": {
+    "files": {
+      "index.html": {
+        "content": "data:text/html,%3C!doctype%20html%3E%0A%3Chtml%3E%0A%3Chead%3E%0A%20%20%3Cmeta%20charset%3D%22utf-8%22%3E%0A%20%20%3Ctitle%3EExperiment%3C%2Ftitle%3E%0A%20%20%3C!--%20viewport%20setup%20--%3E%0A%20%20%3Cmeta%20name%3D%22viewport%22%20content%3D%22width%3Ddevice-width%2C%20initial-scale%3D1%22%3E%0A%20%20%3C!--%20lab.js%20library%20and%20experiment%20code%20--%3E%0A%20%20%24%7B%20header%20%7D%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%20%3C!--%20If%20you'd%20rather%20have%20a%20container%20with%20a%20fixed%20width%0A%20%20%20%20%20%20%20and%20variable%20height%2C%20try%20removing%20the%20fullscreen%20class%20below%20--%3E%0A%20%20%3Cdiv%20class%3D%22container%20fullscreen%22%20data-labjs-section%3D%22main%22%3E%0A%20%20%20%20%3Cmain%20class%3D%22content-vertical-center%20content-horizontal-center%22%3E%0A%20%20%20%20%20%20%3Cdiv%3E%0A%20%20%20%20%20%20%20%20%3Ch2%3ELoading%20Experiment%3C%2Fh2%3E%0A%20%20%20%20%20%20%20%20%3Cp%3EThe%20experiment%20is%20loading%20and%20should%20start%20in%20a%20few%20seconds%3C%2Fp%3E%0A%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%3C%2Fmain%3E%0A%20%20%3C%2Fdiv%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E%0A",
+        "source": "library"
+      },
+      "style.css": {
+        "content": "data:text/css,%2F*%20Please%20define%20your%20custom%20styles%20here%20*%2F%0D%0Abutton%20%7B%0D%0A%20%20border%3A%201px%20solid%20%23ddd%3B%0D%0A%20%20height%3A%20123px%3B%0D%0A%20%20width%3A%20137px%3B%0D%0A%7D",
+        "source": "library"
+      }
+    },
+    "bundledFiles": {
+      "lib/lab.js": {
+        "type": "application/javascript"
+      },
+      "lib/lab.js.map": {
+        "type": "text/plain"
+      },
+      "lib/lab.fallback.js": {
+        "type": "application/javascript"
+      },
+      "lib/lab.legacy.js": {
+        "type": "application/javascript"
+      },
+      "lib/lab.legacy.js.map": {
+        "type": "text/plain"
+      },
+      "lib/lab.css": {
+        "type": "text/css"
+      },
+      "lib/loading.svg": {
+        "type": "image/svg+xml"
+      }
+    }
+  }
+}
