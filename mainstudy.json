@@ -1,0 +1,477 @@
+{
+  "components": {
+    "1": {
+      "id": "1",
+      "type": "lab.flow.Loop",
+      "children": [
+        "2"
+      ],
+      "templateParameters": {
+        "columns": [
+          {
+            "name": "task",
+            "type": "string"
+          },
+          {
+            "name": "block",
+            "type": "string"
+          },
+          {
+            "name": "stimulus",
+            "type": "string"
+          },
+          {
+            "name": "WAV",
+            "type": "string"
+          },
+          {
+            "name": "MIDI",
+            "type": "string"
+          },
+          {
+            "name": "PNG",
+            "type": "string"
+          }
+        ],
+        "rows": [
+          [
+            "Auditory",
+            "Practice",
+            "b",
+            "b.wav",
+            "b.mid",
+            "-"
+          ],
+          [
+            "Auditory",
+            "Practice",
+            "c",
+            "c.wav",
+            "c.mid",
+            "-"
+          ],
+          [
+            "Auditory",
+            "Practice",
+            "k",
+            "k.wav",
+            "k.mid",
+            "-"
+          ],
+          [
+            "Auditory",
+            "Practice",
+            "s",
+            "s.wav",
+            "s.mid",
+            "-"
+          ],
+          [
+            "Visual",
+            "Practice",
+            "a",
+            "",
+            "",
+            "a.png"
+          ],
+          [
+            "Visual",
+            "Practice",
+            "e",
+            "",
+            "",
+            "e.png"
+          ],
+          [
+            "Visual",
+            "Practice",
+            "i",
+            "",
+            "",
+            "i.png"
+          ],
+          [
+            "Visual",
+            "Practice",
+            "o",
+            "",
+            "",
+            "o.png"
+          ]
+        ]
+      },
+      "sample": {
+        "mode": "draw-shuffle"
+      },
+      "files": {
+        "rows": []
+      },
+      "responses": {
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "parameters": {
+        "rows": [
+          [
+            {
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        ]
+      },
+      "messageHandlers": {
+        "rows": [
+          [
+            {
+              "title": "",
+              "message": "",
+              "code": ""
+            }
+          ]
+        ]
+      },
+      "title": "Loop",
+      "_tab": "Content"
+    },
+    "2": {
+      "id": "2",
+      "type": "lab.flow.Sequence",
+      "children": [
+        "3",
+        "4"
+      ],
+      "files": {
+        "rows": []
+      },
+      "responses": {
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "parameters": {
+        "rows": [
+          [
+            {
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        ]
+      },
+      "messageHandlers": {
+        "rows": [
+          [
+            {
+              "title": "",
+              "message": "",
+              "code": ""
+            }
+          ]
+        ]
+      },
+      "title": "Sequence",
+      "_tab": "Scripts"
+    },
+    "3": {
+      "id": "3",
+      "type": "lab.canvas.Screen",
+      "content": [
+        {
+          "type": "circle",
+          "version": "3.5.1",
+          "originX": "center",
+          "originY": "center",
+          "left": 0,
+          "top": "0",
+          "width": 55,
+          "height": 55,
+          "fill": "#ffffff",
+          "stroke": "#000000",
+          "strokeWidth": 1,
+          "strokeDashArray": null,
+          "strokeLineCap": "butt",
+          "strokeDashOffset": 0,
+          "strokeLineJoin": "round",
+          "strokeMiterLimit": 4,
+          "scaleX": 1,
+          "scaleY": 1,
+          "angle": 0,
+          "flipX": false,
+          "flipY": false,
+          "opacity": 1,
+          "shadow": null,
+          "visible": true,
+          "clipTo": null,
+          "backgroundColor": "",
+          "fillRule": "nonzero",
+          "paintFirst": "fill",
+          "globalCompositeOperation": "source-over",
+          "transformMatrix": null,
+          "skewX": 0,
+          "skewY": 0,
+          "radius": 27.5,
+          "startAngle": 0,
+          "endAngle": 6.283185307179586,
+          "id": "31"
+        }
+      ],
+      "viewport": [
+        800,
+        600
+      ],
+      "files": {
+        "rows": []
+      },
+      "responses": {
+        "rows": [
+          [
+            "premature",
+            "keydown",
+            "",
+            "space"
+          ]
+        ]
+      },
+      "parameters": {
+        "rows": [
+          [
+            {
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        ]
+      },
+      "messageHandlers": {
+        "rows": [
+          [
+            {
+              "title": "",
+              "message": "",
+              "code": ""
+            }
+          ]
+        ]
+      },
+      "title": "Fixation",
+      "_tab": "Content",
+      "timeout": "750"
+    },
+    "4": {
+      "id": "4",
+      "type": "lab.html.Screen",
+      "files": {
+        "rows": []
+      },
+      "responses": {
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "parameters": {
+        "rows": [
+          [
+            {
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        ]
+      },
+      "messageHandlers": {
+        "rows": [
+          [
+            {
+              "title": "handle button input",
+              "message": "before:prepare",
+              "code": "// Create an empty array that collects responses\r\nlet userResponse = \"\";\r\nthis.data.userResponse = \"\";\r\n\r\nconst updateButtons = () => {\r\n  document.querySelectorAll('button').forEach(\r\n      button => {\r\n        button.style.border = button.attributes.name.value === userResponse ? '5px solid #ffea2d' : '1px solid #dddddd';\r\n      }\r\n    )\r\n}\r\n\r\n// Setup handler for button clicks\r\nthis.options.events['click button'] = function(event) {\r\n  if (event.currentTarget.attributes.name.value != 'done') {\r\n    userResponse = event.currentTarget.attributes.name.value;\r\n    this.data.userResponse = userResponse;\r\n    updateButtons();\r\n  }\r\n  else {\r\n    this.end('done')\r\n  } \r\n}"
+            }
+          ]
+        ]
+      },
+      "title": "Screen",
+      "_tab": "Content",
+      "content": "<main class=\"content-horizontal-center content-vertical-center\">\r\n  <!-- Table styles are specified in the overall study CSS,\r\n       please see study options. This screen also includes\r\n       a fair amount of logic, which is visible in the scripts\r\n       tab. Please be invited to ask the authors if you have\r\n       any questions!\r\n  -->\r\n  \r\n  <table class=\"table-plain table-span-recall\">\r\n    <tr>\r\n      <td>\r\n        <button class=\"response-button\" style=\"background-image: url(https://i.imgur.com/YnkumR9.png)\" name=\"1\"/>\r\n      </td>\r\n      <td>\r\n        <button class=\"response-button\" style=\"background-image: url(https://i.imgur.com/4Zz8L9D.png)\" name=\"2\"/>\r\n      </td>\r\n      <td>\r\n        <button class=\"response-button\" style=\"background-image: url(https://i.imgur.com/RVZiQGp.png)\" name=\"3\"/>\r\n      </td>\r\n      <td>\r\n        <button class=\"response-button\" style=\"background-image: url(https://i.imgur.com/rJUkT1G.png)\" name=\"4\"/>\r\n      </td>\r\n      <td>\r\n        <button class=\"response-button\" style=\"background-image: url(https://i.imgur.com/EWLkFq5.png)\" name=\"5\"/>\r\n      </td>\r\n    </tr>\r\n    <tr>\r\n      <td colspan=\"9\">\r\n        <button name=\"done\">Done &rarr;</button>\r\n      </td>\r\n    </tr>\r\n  </table>\r\n</main>\r\n<footer>\r\n  <strong>Select the image that represents your emotion the most.</strong><br>\r\n  Then, please click <kbd>Done</kbd> to continue.\r\n</footer>\r\n\r\n<style>\r\n.response-button {\r\n  background-size: cover;\r\n  background-position: center;\r\n  background-repeat: no-repeat;\r\n}\r\n</style>"
+    },
+    "5": {
+      "id": "5",
+      "type": "lab.html.Screen",
+      "responses": {
+        "rows": [
+          [
+            "Continue",
+            "keypress",
+            "",
+            "Space"
+          ]
+        ]
+      },
+      "messageHandlers": {
+        "rows": [
+          [
+            {
+              "title": "",
+              "message": "",
+              "code": ""
+            }
+          ]
+        ]
+      },
+      "parameters": {
+        "rows": [
+          [
+            {
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        ]
+      },
+      "files": {
+        "rows": []
+      },
+      "_tab": "Content",
+      "title": "Landing page",
+      "content": "<header> \r\n  <h2> Difference between liking and emotion within human judgment </h2> \r\n</header>\r\n\r\n<style>\r\naside {\r\n  width: 45%;\r\n  padding: 20px 40px;\r\n  margin-top: 40px;\r\n  margin-bottom: 40px;\r\n  margin-left: 30px; \r\n  float: text-centered-justify;\r\n  background-color: lightyellow;\r\n}\r\nsection {\r\n  width: 45%;\r\n  padding: 10px 30px;\r\n  margin-top: -620px;\r\n  margin-right: 30px; \r\n  float: right;\r\n  background-color: lightyellow;\r\n}\r\n</style>\r\n\r\n\r\n<main>\r\n  <p><h4><em>Welcome!</em> This is a study conducted by students at KTH. The data gathered from this study will be used in the course Human Perception for Information Technology. We appreciate you taking part, please read the following information carefully before starting the test. </h4></p>\r\n\r\n  <p>The interest here is to examine how variations in a particular feature relate to variations in judgments of liking and perceived emotions. We will ask you to rate a few images and sounds based on you personal liking and perceived emotion when interacting with the elements. We will then ask you to give some feedback and answer a short questionnaire. This will not take long, the whole session should take XX minutes.</p>\r\n\r\n<aside>\r\n  <div class=\"text-centered-justify\">\r\n    <h3>Technical</h3>\r\n    <div class=\"text-centered-justify\">\r\n    <p>The study uses web technologies and should work properly on any browser. However, we encourage you to use Chrome or Firefox. Please set your screen resolution to XX. We advice you to use a headphone set to comfortable volume levels and please stay in a quiet room with a stable internet connection and no distractions. </p>\r\n    </div>\r\n  </div>\r\n</aside>\r\n\r\n<aside>\r\n  <div class=\"text-centered-justify\">\r\n    <h3>Eligibility</h3>\r\n    <div class=\"text-centered-justify\">\r\n    <p><em>You do not need previous knowledge in music or art to participate!</em></p>\r\n    <p>However, to perform this test you have to be 18 years old or above, have normal or corrected-to-normal vision and hearing. </p>\r\n    </div>\r\n  </div>\r\n</aside>\r\n\r\n<section>\r\n  <div class=\"text-centered-justify\">\r\n    <h3>Disclaimer</h3>\r\n      <p><em>Your participation is entirely voluntary and anonymous.</em></p>\r\n\r\n      <p>All data are treated in strict confidence and handled securely. The\r\n        anonymised data will be made available to other researchers, however, the results of the study will not be published. This research implies no known risks or direct benefits.</p>\r\n\r\n      <p>Please, click the button below to confirm your participation. You are welcome to withdraw at any time and without justification. To do that, simply close the browser window.</p>\r\n    </div>\r\n    <div class=\"w-m text-justify\">\r\n      <p>By clicking the button you confirm and agree to the following: \r\n        <ul>\r\n          <li>I am aged 18 or above.</li>\r\n          <li>I have normal or corrected-to-normal vision and hearing.</li>\r\n          <li>I have no cognative impairments.</li>\r\n          <li>I have read through and understood the disclaimer and information above, and agree to participate.</li>\r\n        </ul>\r\n    </div>\r\n</section>\r\n</main>\r\n\r\n\r\n<footer>\r\n  Please press <kbd>Space</kbd> to continue.\r\n</footer>"
+    },
+    "6": {
+      "id": "6",
+      "type": "lab.html.Frame",
+      "context": "<!-- Nested components use this canvas -->\n<canvas />",
+      "contextSelector": "[data-labjs-section=\"frame\"]",
+      "files": {
+        "rows": []
+      },
+      "responses": {
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "parameters": {
+        "rows": [
+          [
+            {
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        ]
+      },
+      "messageHandlers": {
+        "rows": [
+          [
+            {
+              "title": "",
+              "message": "",
+              "code": ""
+            }
+          ]
+        ]
+      },
+      "title": "Frame",
+      "children": [
+        "1"
+      ],
+      "_tab": "Scripts"
+    },
+    "root": {
+      "id": "root",
+      "title": "root",
+      "type": "lab.flow.Sequence",
+      "children": [
+        "5",
+        "6"
+      ],
+      "parameters": {
+        "rows": [
+          [
+            {
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        ]
+      },
+      "plugins": [
+        {
+          "type": "lab.plugins.Metadata"
+        }
+      ],
+      "metadata": {
+        "title": "",
+        "description": "",
+        "repository": "",
+        "contributors": ""
+      }
+    }
+  },
+  "version": [
+    20,
+    1,
+    1
+  ],
+  "files": {
+    "files": {
+      "index.html": {
+        "content": "data:text/html,%3C!doctype%20html%3E%0A%3Chtml%3E%0A%3Chead%3E%0A%20%20%3Cmeta%20charset%3D%22utf-8%22%3E%0A%20%20%3Ctitle%3EExperiment%3C%2Ftitle%3E%0A%20%20%3C!--%20viewport%20setup%20--%3E%0A%20%20%3Cmeta%20name%3D%22viewport%22%20content%3D%22width%3Ddevice-width%2C%20initial-scale%3D1%22%3E%0A%20%20%3C!--%20lab.js%20library%20and%20experiment%20code%20--%3E%0A%20%20%24%7B%20header%20%7D%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%20%20%3C!--%20If%20you'd%20rather%20have%20a%20container%20with%20a%20fixed%20width%0A%20%20%20%20%20%20%20and%20variable%20height%2C%20try%20removing%20the%20fullscreen%20class%20below%20--%3E%0A%20%20%3Cdiv%20class%3D%22container%20fullscreen%22%20data-labjs-section%3D%22main%22%3E%0A%20%20%20%20%3Cmain%20class%3D%22content-vertical-center%20content-horizontal-center%22%3E%0A%20%20%20%20%20%20%3Cdiv%3E%0A%20%20%20%20%20%20%20%20%3Ch2%3ELoading%20Experiment%3C%2Fh2%3E%0A%20%20%20%20%20%20%20%20%3Cp%3EThe%20experiment%20is%20loading%20and%20should%20start%20in%20a%20few%20seconds%3C%2Fp%3E%0A%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%3C%2Fmain%3E%0A%20%20%3C%2Fdiv%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E%0A",
+        "source": "library"
+      },
+      "style.css": {
+        "content": "data:text/css,%2F*%20Please%20define%20your%20custom%20styles%20here%20*%2F%0D%0Abutton%20%7B%0D%0A%20%20border%3A%201px%20solid%20%23ddd%3B%0D%0A%20%20height%3A%20123px%3B%0D%0A%20%20width%3A%20137px%3B%0D%0A%7D",
+        "source": "library"
+      }
+    },
+    "bundledFiles": {
+      "lib/lab.js": {
+        "type": "application/javascript"
+      },
+      "lib/lab.js.map": {
+        "type": "text/plain"
+      },
+      "lib/lab.fallback.js": {
+        "type": "application/javascript"
+      },
+      "lib/lab.legacy.js": {
+        "type": "application/javascript"
+      },
+      "lib/lab.legacy.js.map": {
+        "type": "text/plain"
+      },
+      "lib/lab.css": {
+        "type": "text/css"
+      },
+      "lib/loading.svg": {
+        "type": "image/svg+xml"
+      }
+    }
+  }
+}
