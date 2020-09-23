@@ -1,7 +1,10 @@
 # AC1_3-Study
 
-Check the documentation to get a quick intro to LabJS, try to play around a little with the examples
-https://labjs.readthedocs.io/en/latest/learn/builder/
+To run the study locally,
+
+1. Download the study-export-folder.
+2. Load index.html in Chrome or Firefox
+3. Make sure you have an internet connection
 
 To keep on working or to test the study,
 
