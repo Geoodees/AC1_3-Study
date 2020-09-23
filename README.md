@@ -2,7 +2,7 @@
 
 To run the study locally,
 
-1. Download study-export.zio
+1. Download study-export.zip
 2. Extract all the files
 3. Load index.html in Chrome or Firefox
 4. Make sure you have an internet connection
