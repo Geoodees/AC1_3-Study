@@ -1,5 +1,7 @@
 # AC1_3-Study
 
+Here is a url if you want to look at the current version online, http://dvcarrillo.ninja/AC1_3-Study/
+
 To run the study locally,
 
 1. Download study-export.zip
