@@ -2,13 +2,6 @@
 
 Here is a url if you want to look at the current version online, https://geoodees.github.io/AC1_3-Study/
 
-To run the study locally,
-
-1. Download study-export.zip
-2. Extract all the files
-3. Load index.html in Chrome or Firefox
-4. Make sure you have an internet connection
-
 There is some example data in the exampledata-folder.
 
 To keep on working or to test the study,
